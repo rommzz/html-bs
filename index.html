@@ -26,7 +26,7 @@
       </div>
     </div>
   </nav>
-  <div class="row h-100" id="body-page">
+  <div class="row" id="body-page" style="min-height: 100%;">
     <div class="sidebar-content pl-120 col-4 bg-white">
       <div class="bg-light">
         my profile
@@ -42,115 +42,147 @@
       </div>
     </div>
     <div class="col px-120 bg-light">
-      <div class="border-bottom border-dark">
-        <h5>
-          Edit Profile
-        </h5>
-        <p class="text-black-50">
-          Manage your profile information to control, protect and secure your account
-        </p>
+      <ul class="nav mb-5" id="pills-tab" role="tablist" style="gap: 10px">
+        <li class="nav-item" role="presentation">
+          <button class="btn btn-outline-primary nav-item rounded-pill" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Profile</button>
+        </li>
+        <li class="nav-item " role="presentation">
+          <button class="btn btn-outline-primary nav-item rounded-pill" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Payment Method</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="btn btn-outline-primary nav-item rounded-pill" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Password</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+          <div class="border-bottom border-dark">
+            <h5>
+              Edit Profile
+            </h5>
+            <p class="text-black-50">
+              Manage your profile information to control, protect and secure your account
+            </p>
+          </div>
+          <form class="py-5" action="blank">
+            <div class="row align-items-center" style="gap: 25px;">
+              <div class="col-3 text-end p-1">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M23.6728 25.1306C23.6728 20.6402 27.401 17 32 17C36.599 17 40.3272 20.6402 40.3272 25.1306C40.3272 29.6211 36.599 33.2613 32 33.2613C27.401 33.2613 23.6728 29.6211 23.6728 25.1306ZM17.1403 43.6574C18.9338 37.2301 25.3068 34.973 32 34.973C38.6932 34.973 45.0662 37.2301 46.8597 43.6574C47.2468 45.0447 46.7987 46.3404 45.9346 47.2474C45.0884 48.1355 43.8405 48.6667 42.5186 48.6667H21.4814C20.1595 48.6667 18.9116 48.1355 18.0654 47.2474C17.2013 46.3404 16.7532 45.0447 17.1403 43.6574Z" fill="#228AC9"/>
+                  <path d="M32 63C14.8792 63 1 49.1208 1 32H-1C-1 50.2254 13.7746 65 32 65V63ZM63 32C63 49.1208 49.1208 63 32 63V65C50.2254 65 65 50.2254 65 32H63ZM32 1C49.1208 1 63 14.8792 63 32H65C65 13.7746 50.2254 -1 32 -1V1ZM32 -1C13.7746 -1 -1 13.7746 -1 32H1C1 14.8792 14.8792 1 32 1V-1Z" fill="#32749C"/>
+                </svg>             
+              </div>
+              <div class="col px-4" style="gap: 10px;">
+                <label class="btn btn-outline-primary" for="img">
+                  Upload
+                  <input style="display: none;" type="file" id="img" name="img" accept="image/*">
+                </label>
+                <p class="text-black-50 m-0">Upload profile picture max 5 MB</p>
+              </div>
+            </div>
+            <div class="row align-items-center" style="gap: 25px;">
+              <div class="col-3 text-end">
+                Name
+              </div>
+              <div class="col row px-4" style="gap: 10px;">
+                <input type="text" class="form-control col" name="firstName" placeholder="first name" id="firstName">
+                <input type="text" class="form-control col" name="lastName" placeholder="last name" id="lastName">
+              </div>
+            </div>
+            <div class="row" style="gap: 25px;">
+              <label class="col-3 text-end">
+                Email
+              </label>
+              <div class="col d-flex">
+                <input type="email" class="form-control" placeholder="email@email.com" name="email" id="email">
+              </div>
+            </div>
+            <div class="row" style="gap: 25px;">
+              <label class="col-3 text-end">
+                Date of Birth
+              </label>
+              <div class="col d-flex">
+                <input type="date" class="form-control" name="dob" id="dob">
+              </div>
+            </div>
+            <div class="row" style="gap: 25px;">
+              <div class="col-3 text-end">
+                Gender
+              </div>
+              <div class="col d-flex">
+                <div class="form-check col">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="male" checked>
+                  <label class="form-check-label" for="exampleRadios1">
+                    Male
+                  </label>
+                </div>
+                <div class="form-check col">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="female">
+                  <label class="form-check-label" for="exampleRadios2">
+                    Female
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row" style="gap: 25px;">
+              <label class="col-3 text-end" for="phone">
+                Phone Number
+              </label>
+              <div class="col d-flex">
+                <input type="tel" class="form-control" name="phone" id="phone" placeholder="Insert phone number">
+              </div>
+            </div>
+            <div class="row" style="gap: 25px;">
+              <label class="col-3 text-end">
+                Country
+              </label>
+              <div class="col d-flex">
+                <select id="inputState" class="form-control">
+                  <option>Indonesia</option>
+                  <option>Malaysia</option>
+                </select>
+              </div>
+            </div>
+            <div class="row align-items-center" style="gap: 25px;">
+              <label class="col-3 text-end" for="address">
+                Home Address
+              </label>
+              <textarea class="form-control col mx-2" placeholder="Insert home address" id="floatingTextarea" rows="4"></textarea>
+            </div>
+            <div class="row" style="gap: 25px;">
+              <label class="col-3 text-end">
+                Years Of diving
+              </label>
+              <div class="col d-flex">
+                <select id="inputState" class="form-control">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+            </div>
+            <div class="row" style="gap: 25px;">
+              <label class="col-3 text-end" for="emrgPhone">
+                Emergency Contact
+              </label>
+              <div class="col d-flex">
+                <input type="tel" class="form-control" name="emrgPhone" id="emrgPhone" placeholder="Insert phone number">
+              </div>
+            </div>
+            <div class="text-end">
+              <input class="btn btn-outline-primary" type="submit" value="Submit">
+            </div>
+          </form>
+        </div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
       </div>
-      <form class="py-5" action="blank">
-        <div class="row align-items-center" style="gap: 25px;">
-          <div class="col-3 text-end">
-            Name
-          </div>
-          <div class="col row px-4" style="gap: 10px;">
-            <input type="text" class="form-control col" name="firstName" id="firstName">
-            <input type="text" class="form-control col" name="lastName" id="lastName">
-          </div>
-        </div>
-        <div class="row" style="gap: 25px;">
-          <label class="col-3 text-end">
-            Email
-          </label>
-          <div class="col d-flex">
-            <input type="email" class="form-control" name="email" id="email">
-          </div>
-        </div>
-        <div class="row" style="gap: 25px;">
-          <label class="col-3 text-end">
-            Date of Birth
-          </label>
-          <div class="col d-flex">
-            <input type="date" class="form-control" name="dob" id="dob">
-          </div>
-        </div>
-        <div class="row" style="gap: 25px;">
-          <div class="col-3 text-end">
-            Gender
-          </div>
-          <div class="col d-flex">
-            <div class="form-check col">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="male" checked>
-              <label class="form-check-label" for="exampleRadios1">
-                Male
-              </label>
-            </div>
-            <div class="form-check col">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="female">
-              <label class="form-check-label" for="exampleRadios2">
-                Female
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="row" style="gap: 25px;">
-          <label class="col-3 text-end" for="phone">
-            Phone Number
-          </label>
-          <div class="col d-flex">
-            <input type="tel" class="form-control" name="phone" id="phone" placeholder="Insert phone number">
-          </div>
-        </div>
-        <div class="row" style="gap: 25px;">
-          <label class="col-3 text-end">
-            Country
-          </label>
-          <div class="col d-flex">
-            <select id="inputState" class="form-control">
-              <option>Indonesia</option>
-              <option>Malaysia</option>
-            </select>
-          </div>
-        </div>
-        <div class="row align-items-center" style="gap: 25px;">
-          <label class="col-3 text-end" for="address">
-            Home Address
-          </label>
-          <textarea class="form-control col mx-2" placeholder="Insert home address" id="floatingTextarea" rows="4"></textarea>
-        </div>
-        <div class="row" style="gap: 25px;">
-          <label class="col-3 text-end">
-            Years Of diving
-          </label>
-          <div class="col d-flex">
-            <select id="inputState" class="form-control">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </div>
-        </div>
-        <div class="row" style="gap: 25px;">
-          <label class="col-3 text-end" for="emrgPhone">
-            Emergency Contact
-          </label>
-          <div class="col d-flex">
-            <input type="tel" class="form-control" name="emrgPhone" id="emrgPhone" placeholder="Insert phone number">
-          </div>
-        </div>
-        <div class="text-end">
-          <input class="btn btn-primary" type="submit" value="Submit">
-        </div>
-      </form>
     </div>
   </div>
   <footer class="bg-primary text-white">
