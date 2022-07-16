@@ -69,7 +69,7 @@
               Manage your profile information to control, protect and secure your account
             </p>
           </div>
-          <form id="profilForm" class="py-5" action="blank">
+          <form id="profileForm" class="py-5" action="blank">
             <div class="row align-items-center" style="gap: 25px;">
               <div class="col-3 text-end p-1">
                 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -190,7 +190,73 @@
             </div>
           </form>
         </div>
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+          <section id="paymentMethod">
+            <div class="border-bottom border-dark">
+              <h5>
+                Payment Method
+              </h5>
+              <p class="text-black-50">
+                Manage your payments to increase the security and convenience of your shopping.
+              </p>
+            </div>
+            <div class="py-4">
+              <div class="text-end">
+                <button
+                  id="paymentDialog"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  Add Payment
+                </button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="justify-content-center modal-dialog modal-dialog-centered">
+                    <div class="modal-content modal-content p-4 w-75" style="border-radius: 16px;">
+                      <div class="modal-header border-0">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body justify-content-start">
+                        <form action="blank">
+                          <h4 class="text-center">
+                            Add Payment Method
+                          </h4>
+                          <div id="bankAccount" class="text-left">
+                            <select id="bankName" class="form-control">
+                              <option>BCA</option>
+                              <option>BRI</option>
+                            </select>
+                            <input type="text" class="form-control" placeholder="Bank account holder name" name="holderName" id="holderName">
+                            <input type="text" class="form-control" placeholder="Bank account number/IBAN">
+                            <input type="text" class="form-control" placeholder="Branch Name">
+                            <input type="text" class="form-control" placeholder="Branch City">
+                            <input type="text" class="form-control" placeholder="Branch Address">
+                            <input type="text" class="form-control" placeholder="Swift Code">
+                            <input type="text" class="form-control" placeholder="Country">
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer border-0 justify-content-start">
+                        <button type="button" class="btn btn-primary">Submit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pt-5">
+                <div class="text-center">
+                  <img src="./images/empty_payment.png" class="img-fluid" style="width: 171.56px;" alt="">
+                  <div>
+                    No Payment Method 
+                  </div>
+                  <div>
+                    Click on the right upper button to add your payment method
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
           <div class="border-bottom border-dark">
             <h5>
@@ -259,6 +325,10 @@
 </body>
 </html>
 <style>
+  #bankAccount > input {
+    margin-top: 10px;
+    border-radius: 6px;
+  }
   #changePassword, label {
     color: #818181;
   }
